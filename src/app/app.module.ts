@@ -10,6 +10,7 @@ import {CounterModule} from './views/counter/counter.module';
 import {Routes, RouterModule} from '@angular/router';
 import {OrdersModule} from './views/orders/orders.module';
 import {OrderReducer} from './store/orders/orders.reducers';
+import { EffectsModule } from '@ngrx/effects';
 
 const routes: Routes = [
   {path: '', redirectTo: '/order', pathMatch: 'full'},
@@ -31,6 +32,7 @@ export const reducers: ActionReducerMap<any> = {
     BrowserModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument(),
     CounterModule,
     OrdersModule

@@ -38,7 +38,24 @@ export class OrderLoad implements Action {
   // }
 }
 
+export class OrderLoadSuccess implements Action {
+  readonly type = OrderActionTypes.OrderLoadSuccess;
+
+  constructor(public payload: { orders: OrderModel[] }) {
+  }
+}
+
+export class OrderLoadFail implements Action {
+  readonly type = OrderActionTypes.OrderLoadFail;
+
+  constructor(public payload: { error: any }) {
+  }
+}
+
+
 export type OrderActions = OrderAdd
   | OrderUpdate
   | OrderDelete
-  | OrderLoad;
+  | OrderLoad
+  | OrderLoadSuccess
+  | OrderLoadFail;

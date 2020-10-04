@@ -1,5 +1,11 @@
 <p>orders works! {{(orders | async)?.length}}</p>
 
+<ul>
+    <li *ngFor="let order of orders | async; index as i">
+      {{ i + 1 }}. {{ order.userName }}
+    </li>
+  </ul>
+
 <button (click)="onSubmit('')">Add</button>
 
 <button (click)="onSubmit('123123')">Update</button>
